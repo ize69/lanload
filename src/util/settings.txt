@@ -1,0 +1,43 @@
+//this is the settings configuration file for LANLOAD developed by Isaac Worsencroft
+//developed under the open source 0 license (see LICENSE.txt for more information)
+//this file is used to configure the settings for LANLOAD
+~packet settings
+//packet size the size of the packets to be sent in bytes
+packet_size::1024
+//packet count|1000|the number of packets to be sent
+packet_count::1000
+//packet delay|0|the delay between packets in milliseconds
+packet_delay::0
+//packet type|0|the type of packet to be sent (0=TCP, 1=UDP)
+packet_type::0
+//packet timeout|1000|the timeout for the packets in milliseconds
+packet_timeout::1000
+//packet timeout count|10|the number of timeouts before the connection is closed
+packet_timeout_count::10
+~target settings
+//target ip|8.8.8.8|
+target_ip::8.8.8.8
+//target port|12345|
+target_port::12345
+~network settings
+//network interface|eth0|the network interface to use
+network_interface::eth0
+//network timeout|2000|the timeout for the network interface in milliseconds
+network_timeout::2000
+~misc settings
+//update intevoltage|86400|the interval in seconds to check for updates
+update_interval::0.125
+//misc debug|0|whether to enable debug mode (0=disabled, 1=enabled)
+misc_debug::1
+//misc log|0|whether to enable logging (0=disabled, 1=enabled)
+misc_log::1
+//misc log file|lanload.log|the file to log to
+misc_log_file::lanload.log
+//misc log level|0|the level of logging (0=none, 1=errors, 2=warnings, 3=info, 4=debug)
+misc_log_level::4
+//misc log max size|1000000|the maximum size of the log file in bytes
+misc_log_max_size::1000000
+//misc log max files|10|the maximum number of log files to keep
+misc_log_max_files::10
+//last updated|2023-01-01 00:00:00|the last time this file was updated
+last_updated::2023-01-01 00:00:00
