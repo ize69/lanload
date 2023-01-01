@@ -26,7 +26,6 @@ def send_packets(ip_address, port):
             print(f'sent {packet_count} packets in {elapsed_time:.3f} seconds ({throughput:.4f} Gbps)', end='\r')
             packet_count = 0
             start_time = time.time()
-            #draw the graph
-            
+            #draw the graph           
 if __name__ == '__main__':
     send_packets('18.0.70.16', 12345)

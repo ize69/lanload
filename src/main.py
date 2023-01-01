@@ -5,7 +5,7 @@ import threading
 import time
 import packets
 from util import load_settings as lset
-
+from util import wan_speed_test as wst
 #stores the ip address to send the packets to 
 #the ip address is stored in a string variable
 
@@ -19,14 +19,22 @@ def main():
     print('5. Exit')
     choice = input('Enter your choice: ')
     if choice == '1':
-        print('Testing network performance...')
-        # create a thread that runs the send_packets function
-        ip_address_destination = lset.get_setting('target settings','target_ip')
-        destination_port = lset.get_setting('target settings','target_port')
-        print(str(ip_address_destination)+ ' on port ' + str(destination_port))
-        packets.send_packets(str(ip_address_destination), int(destination_port))
-        #t = threading.Thread(target=send_packets, args=(ip_address_destination, destination_port))
-        #t.start()
+        print('select a test:')
+        print('1. upload test')
+        print('2. download test')
+        choice = input('Enter your choice: ')
+        if choice == '1':
+            print('Testing network performance...')
+            # create a thread that runs the send_packets function
+            ip_address_destination = lset.get_setting('target settings','target_ip')
+            destination_port = lset.get_setting('target settings','target_port')
+            print(str(ip_address_destination)+ ' on port ' + str(destination_port))
+            packets.send_packets(str(ip_address_destination), int(destination_port))
+            #t = threading.Thread(target=send_packets, args=(str(ip_address_destination), int(destination_port))
+            #t.start()
+        elif choice == '2':
+           wst.test_network_speed() 
+           main()
     elif choice == '2':
         temp = input('Enter the new ip address: ')
         #checks if the ip address is valid and if it is then it changes the ip address
@@ -54,8 +62,9 @@ def main():
         main()
     elif choice == '4':
         #reloads the settings file
-        lset.save_settings()
-        print('settings reloaded')
+        #lset.save_settings()
+        #print('settings reloaded')
+        print('not implemented yet')
         main()
     elif choice == '5':
         print('Goodbye!')
